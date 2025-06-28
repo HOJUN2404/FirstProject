@@ -1,0 +1,1 @@
+pip install rapidfuzz selenium webdriver-manager beautifulsoup4 requests lxml pykrx fuzzywuzzy python-Levenshtein
