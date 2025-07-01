@@ -1,9 +1,7 @@
 #import crawler.naver  # This is a sample Python script.
 #import crawler.gpt
 from stock.abbreviation_resolver import resolve_abbreviation
-from stock.naver_finance_scraper import get_ticker_by_name, get_key_ratios, get_all_indicators
-from stock.naver_finance_summary_selenium import get_financial_summary_by_selenium
-
+from stock.naver_finance_scraper import get_ticker_by_name, get_all_indicators
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -46,19 +44,8 @@ def resolve_and_show(input_name):
         print(f"'{name}'의 종목코드를 찾을 수 없습니다.")
         return
 
-    #ratios = get_key_ratios(ticker)
-
     all_indicators = get_all_indicators(ticker)
 
-    #fin_summary = get_financial_summary_by_selenium(ticker)
-    '''
-    print("\n기업 정보 요약")
-    print(f"기업명     : {name}")
-    print(f"종목코드   : {ticker}")
-    print(f"PER        : {ratios['PER']}")
-    print(f"PBR        : {ratios['PBR']}")
-    print(f"배당률     : {ratios['배당률']}")
-    '''
     print("\n전체 투자지표")
     if all_indicators:
         for k, v in all_indicators.items():
@@ -66,13 +53,6 @@ def resolve_and_show(input_name):
     else:
         print("전체 투자지표 정보를 가져올 수 없습니다.")
 
-    '''print("\n재무요약 정보")
-    if fin_summary:
-        for k, v in fin_summary.items():
-            print(f"{k:15}: {v}")
-    else:
-        print("재무요약 정보를 가져올 수 없습니다.")
-    '''
 if __name__ == "__main__":
     print("줄임말 또는 기업명을 입력하세요. (종료: q)")
     while True:
