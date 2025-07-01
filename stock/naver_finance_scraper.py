@@ -23,7 +23,7 @@ def get_ticker_by_name(company_name):
             return list_match.group(1)
 
     return None
-
+'''
 def get_key_ratios(ticker):
     url = f"https://finance.naver.com/item/main.naver?code={ticker}"
     headers = {'User-Agent': 'Mozilla/5.0'}
@@ -46,7 +46,7 @@ def get_key_ratios(ticker):
     except Exception as e:
         print("Error in get_key_ratios:", e)
         return {"PER": "-", "PBR": "-", "배당률": "-"}
-
+'''
 def get_all_indicators(ticker):
     url = f"https://finance.naver.com/item/main.naver?code={ticker}"
     headers = {'User-Agent': 'Mozilla/5.0'}
